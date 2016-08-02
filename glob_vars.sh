@@ -1,5 +1,6 @@
 ## Declare Variables
 
+
 	## font and color indicators
 		high="\e[1;37;44m"
 		under_="\e[4m"
