@@ -11,3 +11,7 @@ curl -i \
 -H "Content-Type:application/json" \
 -H "authToken: null" \
 -X POST --data '{key:value}' "http://username:password@api.service/url/call/"
+
+# find some data the clean to writeable
+read=$(grep "regex" path/to/src)
+write=$(sed -r 's/match/replace/g;s/match/replace/g' <<< $read);
