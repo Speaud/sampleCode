@@ -24,6 +24,12 @@ while getopts :h FLAG; do
   esac
 done
 
+: '
+  multiple
+  line
+  comment
+'
+
 clear
 
 ## "normalize" file paths
