@@ -15,37 +15,33 @@ README
 
 #!/bin/sh
 
-NO_ARGS=0
-E_OPTERROR=2
-
-
 DisplayHelp() {
     echo "Usage: `basename $0` options (-mnopqrs)"
-    echo \\n"Documentation: ..."\\n
-    echo "Basic usage: "\\n
-    echo \\t"Run this script from within the root of the local privacy app instance"\\n
-    echo "Opts: "\\n
-    echo \\t"-u (optional)"\\t"username for docker login"\\n
-    echo \\t"-p (optional)"\\t"password for docker login"\\n
-    echo \\t"-d (optional)"\\t"if opt arg equal 1, dual deployment runs"\\n
-    exit 1
 }
 
-
 # $# = number of arguments
-[ $# -eq "$NO_ARGS" ] && ( DisplayHelp; exit 1 )
+[[ $# -eq 0 ]] && (
+    echo "no args"
+)
+# $@ = what parameters were passed
+# $? = was last command successful
 
-while getopts ":mnopq:rs" Option
+# :a
+# a:    with argument       -a <argument value>
+
+# OPTSTRING
+
+while getopts "m:nopq:rs" OPTION
 do
-    case $Option in
-        m     ) echo "Scenario #1: option -m-   [OPTIND=${OPTIND}]";;
-        n | o ) echo "Scenario #2: option -$Option-   [OPTIND=${OPTIND}]";;
+    case $OPTION in
+        m     ) echo "hello $OPTARG" ;;
+        n | o ) echo "Scenario #2: option -$OPTION-   [OPTIND=${OPTIND}]";;
         p     ) echo "Scenario #3: option -p-   [OPTIND=${OPTIND}]";;
         q     ) echo "Scenario #4: option -q-\
         with argument \"$OPTARG\"   [OPTIND=${OPTIND}]";;
         #  Note that option 'q' must have an associated argument,
         #+ otherwise it falls through to the default.
-        r | s ) echo "Scenario #5: option -$Option-";;
+        r | s ) echo "Scenario #5: option -$OPTION-";;
         *     ) echo "Unimplemented option chosen.";;   # Default.
     esac
 done
