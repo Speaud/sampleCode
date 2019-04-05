@@ -12,12 +12,12 @@ mnt=( t u )
 GlobalScopeFunction() {
     #epoch_timestamp=$(date +%s)
     #echo $epoch_timestamp > tmp/subshell-generated-file.$1.$epoch_timestamp.txt
-    echo "$BASH_SUBSHELL - GlobalScopeFunction"
+    echo "$$ - $BASHPID - $PPID - $BASH_SUBSHELL - GlobalScopeFunction"
 }
 
 GlobalScopeFunctionWithSubshellProcess() {
     (
-        echo "$BASH_SUBSHELL - GlobalScopeFunctionWithSubshellProcess"
+        echo "$$ - $BASHPID - $PPID - $BASH_SUBSHELL - GlobalScopeFunctionWithSubshellProcess"
     )
 }
 
@@ -43,24 +43,38 @@ for mnt in ${mnt[@]}
 do
     echo "start loop >>>"
 
+    echo $$ | (sh -c 'echo $PPID' && :)
+
     (
-        echo ".....start child process >>>" # 1
+        #echo ".....start child process >>>" # 1
+
+        #echo $$ $BASHPID
+
+        echo $$ | (sh -c 'echo $PPID' && :)
+
+        #echo $$; ( : ; bash -c 'echo $PPID' )
+
+        #bash -c 'echo $PPID'
         
-        echo "$BASH_SUBSHELL - INNER"
+        #echo "$$ - $BASHPID - $PPID - $BASH_SUBSHELL - INNER" # 1
         
-        GlobalScopeFunction
+        #GlobalScopeFunction # 1
         
-        GlobalScopeFunctionWithSubshellProcess
+        #GlobalScopeFunctionWithSubshellProcess # 2
 
         (
-            echo "$BASH_SUBSHELL - INNER INNER"
+            #echo "$$ - $BASHPID - $PPID - $BASH_SUBSHELL - INNER INNER" # 2
             
-            GlobalScopeFunction
+            #GlobalScopeFunction # 2
             
-            GlobalScopeFunctionWithSubshellProcess
+            #GlobalScopeFunctionWithSubshellProcess # 3
+
+echo $PPID
+
+            echo $$ | (sh -c 'echo $PPID' && :)
         )
 
-        echo ".....<<< end child process"
+        #echo ".....<<< end child process"
     )
 
     echo "<<< end loop"
