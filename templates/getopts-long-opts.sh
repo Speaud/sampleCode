@@ -17,7 +17,9 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+: '
 if [[ "$APPLE" == "" || "$BANANA" == "" ]]; then
     echo "ERROR: Options -a and -b require arguments."
     exit 1
 fi
+'

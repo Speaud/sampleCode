@@ -25,3 +25,5 @@ elif [ "$seconds" -gt 0 ]; then
 else
    echo "Unknown parameter"
 fi
+
+[ $(date +%w) -eq 6 ] && {echo "do something on Saturdays"; do_some_other_stuff; exit 0;} || echo "do different things on other days"
