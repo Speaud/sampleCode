@@ -62,7 +62,6 @@ ls.on('close', (code) => {
 ************************************************************/
 
 exec('sh runme.sh', { env: { foo: 'bar' } }, (error, stdout, stderr) => {
-//exec('node runme', { env: { foo: 'bar' } }, (error, stdout, stderr) => {
 	if (error) {
 		console.error(`exec error: ${error}`);
 		return;
