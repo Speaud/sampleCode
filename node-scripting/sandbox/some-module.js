@@ -8,3 +8,4 @@ process.on('message', (m) => {
 
 // Causes the parent to print: PARENT got message: { foo: 'bar', baz: null }
 process.send({ foo: 'bar', baz: NaN });
+process.send({ key: 1 });

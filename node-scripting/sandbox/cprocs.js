@@ -120,6 +120,9 @@ const n = fork(`${__dirname}/some-module`, { env: { foo: 'bar' } } );
 
 n.on('message', (m) => {
   console.log('PARENT got message:', m);
+
+  if (m.key === 1) console.log('m.key === 1')
+
 });
 
 // Causes the child to print: CHILD got message: { hello: 'world' }
