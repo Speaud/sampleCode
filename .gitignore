@@ -1,3 +1,2 @@
-tmp/*
-scraps/tmp/*
-node-scripting/node_modules/
+tmp/
+node_modules/
