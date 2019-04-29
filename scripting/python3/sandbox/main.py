@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
+import sys
+import subprocess
 from hello import helloworld
-print("This line will be printed.")
+
+# false command always exits with a non-zero status code
+
+
+print("yep")
+
 helloworld()
 
-var1 = 100
-if var1:
-   print("1 - Got a true expression value")
-   print(var1)
-else:
-   print("1 - Got a false expression value")
-   print(var1)
+excmd = ["ls", "-l"]
 
-var2 = 0
-if var2:
-   print("2 - Got a true expression value")
-   print(var2)
-else:
-   print("2 - Got a false expression value")
-   print(var2)
+p = subprocess.call(excmd)
 
-print("Good bye!")
+output = subprocess.check_output(['ls', '-1'])
+print('Have %d bytes in output' % len(output))
+print(output)
+
+# subprocess.Popen(['/bin/sh', '-c', args[0], args[1], ...])
+
+
+print('Number of arguments:', len(sys.argv), 'arguments.')
+print('Argument List:', str(sys.argv))
