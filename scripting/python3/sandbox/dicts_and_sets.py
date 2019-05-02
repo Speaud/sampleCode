@@ -27,6 +27,13 @@ fa = f('--help')
 
 print(fa)
 
+# `set`...
+# store values
+# cannot have multiple occurrences of the same element
+# store unordered values
+# and is useful to...
+# remove duplicate values
+# perform common math ops (unions, intersections)
 setx = set(['foo', 'bar', 'baz', 'foo', 'qux'])
 
 print(setx)

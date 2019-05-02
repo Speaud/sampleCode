@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
+import os
 import sys
 import subprocess
 from hello import helloworld
+import datetime
 
 # false command always exits with a non-zero status code
 
+vvv = os.popen('ls -l').read()
+
+print(vvv)
 
 print("yep")
 
@@ -20,6 +25,12 @@ print(output)
 
 # subprocess.Popen(['/bin/sh', '-c', args[0], args[1], ...])
 
+exec()
 
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', str(sys.argv))
+
+
+program = input('Enter input:')
+print(program)
+
+ddd = datetime.date.today()
+print(ddd)
