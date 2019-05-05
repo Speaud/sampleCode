@@ -1,0 +1,47 @@
+Docker Machine
+    - used to install Docker Engine
+    - tool for provisioning and managing your Dockerized hosts (i.e., host with Docker Engine)
+
+
+Engine = client-server application, made up of the Docker daemon (API)
+
+Build a Docker Image/container
+    ...
+
+Create Docker Engine
+    $ docker-machine create --driver digitalocean --digitalocean-access-token <PERSONAL_ACCESS_TOKEN> <MACHINE_NAME>
+
+Connect to Engine by changing the local docker environment variables to those of the <MACHINE_NAME>
+    $ eval $(docker-machine env <MACHINE_NAME>)
+        Note: all `docker` commands are now "targeting" <MACHINE_NAME>
+
+Show the "targeted" Machine
+    $ docker-machine active
+
+Reset "targeted" Machine
+    $ eval $(docker-machine env -u)
+
+Deploy from DockerHub to Machine - https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+    $ docker run -d -p 80:3000 --name webserver <DOCKER_HUB_UN>/<DOCKER_HUB_IMAGE>
+        Note: port 80 is the server default port
+        NOTE: [-p] format=(host:image/app)
+
+Deploy a local Image to Machine
+
+    ??? ext - .tar v .tar.gz, performance concern
+        docker load < busybox.tar.gz
+        docker load --input fedora.tar
+
+    Create tarball from Image
+        $ docker save -o <LOCAL_IMAGE_NAME.tar> > <LOCAL_IMAGE_NAME>
+        $ docker save <dockernameortag> | gzip > mycontainer.tgz
+
+    Load in Image into the Machine
+        $ docker load < <LOCAL_IMAGE_NAME.tar>
+
+    Run the Image
+        $ docker run -d -p 80:3000 --name webserver <IMAGE_NAME>
+
+Delete Docker Engine
+    $ docker-machine stop <MACHINE_NAME>
+    $ docker-machine rm <MACHINE_NAME>
