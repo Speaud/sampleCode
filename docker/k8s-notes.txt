@@ -1,0 +1,23 @@
+Kubernetes (aka "k8s")
+    - for containerized apps
+    - cluster orchestration system
+    - deploy containerized applications to a cluster then let k8s handle scaling/load/etc.
+
+Minikube
+    - lightweight k8s distro
+
+
+Cluster
+    - consists of Nodes
+    - controlled by Master (aka "MainThread")
+        - Rule: if a Cluster handles production traffic it should contain a min of 3 child Nodes
+
+    Master
+        - manages the Cluster
+        - exposes Kubernetes API
+
+    Node(s)
+        - VM, worker machine of Cluster
+        - Kubelet (IPC-esque)
+        - contains tools for handling container operations (i.e., Docker)
+        - nodes communicate with the master using the Kubernetes API
