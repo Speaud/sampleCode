@@ -5,7 +5,21 @@
 # however if the shared variable is static you should be good...?
 import os 
 import time
-import threading 
+import threading
+
+"""
+
+    "aws s3 ls s3://bucket | grep -cE '/[z]+/'"
+
+        subprocess.run(bash_cmd.split())
+
+    subprocess.run(bash_cmd.join())
+
+    sp = subprocess.Popen(ls_cmd_to_run, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = sp.communicate()
+"""
+
+print("asd")
   
 def task1(_p): 
     #time.sleep( 5 )
