@@ -1,9 +1,11 @@
 FROM ubuntu:16.04
 # Build:    `docker build -t ubuntu-airflow .` # build the Image
-# Run:      `docker run -d -p 3000:8080 ubuntu-airflow` # Airflow is running on localhost:3000
+# Run:      `docker run -d -p 3000:8080 --name UBUNTU_AIRFLOW ubuntu-airflow` # Airflow is running on localhost:3000
 #           `docker ps` # check the ubuntu-airflow Image is running 
-#           ---not working---`docker exec -it ubuntu-airflow` # shell into the Image---right-yet---
-# Stop:     `docker kill <container id>`
+#           `docker exec -it UBUNTU_AIRFLOW bash` # shell into the Image
+# Stop:     `docker stop UBUNTU_AIRFLOW`
+#           `docker kill <container id>`
+# Remove:   `docker rm UBUNTU_AIRFLOW`
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common vim
@@ -35,5 +37,3 @@ EXPOSE 8080
 
 # start the web server, default port is 8080
 CMD ["airflow", "webserver", "-p", "8080"]
-
-# run in detached mode
