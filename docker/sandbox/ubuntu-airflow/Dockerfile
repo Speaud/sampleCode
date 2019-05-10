@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
-# Build:    docker build -t ubuntu-airflow .
-# Run:      docker run -it -p 8000:8000 ubuntu-airflow
+# Build:    `docker build -t ubuntu-airflow .`
+# Run:      `docker run -it -p 8000:8000 ubuntu-airflow` # Airflow is running on localhost:3000
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common vim
@@ -22,10 +22,8 @@ ENV AIRFLOW_HOME ~/airflow
 # install from pypi using pip
 RUN pip install apache-airflow
 
-
 # initialize the database
 RUN airflow initdb
-
 
 # start the scheduler
 #RUN airflow scheduler
@@ -35,4 +33,4 @@ EXPOSE 8080
 # start the web server, default port is 8080
 CMD ["airflow", "webserver", "-p", "8080"]
 
-# visit localhost:8080 in the browser and enable the example dag in the home page
+# run in detached mode
