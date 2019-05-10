@@ -1,6 +1,9 @@
 FROM ubuntu:16.04
-# Build:    `docker build -t ubuntu-airflow .`
-# Run:      `docker run -it -p 8000:8000 ubuntu-airflow` # Airflow is running on localhost:3000
+# Build:    `docker build -t ubuntu-airflow .` # build the Image
+# Run:      `docker run -d -p 3000:8080 ubuntu-airflow` # Airflow is running on localhost:3000
+#           `docker ps` # check the ubuntu-airflow Image is running 
+#           ---not working---`docker exec -it ubuntu-airflow` # shell into the Image---right-yet---
+# Stop:     `docker kill <container id>`
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common vim
@@ -14,13 +17,13 @@ RUN apt-get install -y git
 RUN python3.6 -m pip install pip --upgrade
 RUN python3.6 -m pip install wheel
 
+# install Airflow from pypi using pip
+RUN pip install apache-airflow
+
 # airflow needs a home, ~/airflow is the default,
 # but you can lay foundation somewhere else if you prefer
 # (optional)
 ENV AIRFLOW_HOME ~/airflow
-
-# install from pypi using pip
-RUN pip install apache-airflow
 
 # initialize the database
 RUN airflow initdb
