@@ -3,9 +3,11 @@ persists only during the life
 Docker is fetching the image only before running the container.
 So the state after running a container is persistent. 
 rebuilding and restarting isn't enough
+-
 
-Clean up switch called -rf which removes the container after exited
--d runs the container in the background
+docker run
+    Clean up switch called -rf which removes the container after exited
+    -d runs the container in the background
 
 docker-compose up --build
 

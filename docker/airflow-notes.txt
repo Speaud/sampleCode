@@ -1,1 +1,6 @@
-workflows as directed acyclic graphs (DAGs) of tasks.
+workflow directed acyclic graphs (DAGs) of tasks.
+
+DAG 
+
+airflow scheduler executes your tasks
+
