@@ -1,0 +1,15 @@
+cron job
+
+Minutes [0-59]
+|   Hours [0-23]
+|   |   Days [1-31]
+|   |   |   Months [1-12]
+|   |   |   |   Days of the Week [Numeric, 0-6]
+|   |   |   |   |
+*   *   *   *   * home/path/to/command/the_command.sh
+
+0 0 1 * * home/path/to/command/the_command.sh
+
+// run every day at 9:00 AM
+
+0 9 * * *
