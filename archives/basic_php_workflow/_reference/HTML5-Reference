@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en-US" />
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<meta name='viewport' content='width=device-width, initial-scale=1' /><!-- to disable zooming capabilities add maximum-scale=1, user-scalable=no -->
+		<link rel="stylesheet" href="styles.css" />
+		<link rel='stylesheet' type='text/css' href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+		<!--[if lt IE 9]>
+  			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<!-- simple syntax for loading external scripts (the type attribute is not necessary) -->
+		<!-- jQuery library --><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- jQuery library --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<style>
+		
+			/*
+			
+				although we use sass, below are new html5 block level elements
+			
+			*/
+		
+			header, section, footer, aside, nav, main, article, figure {
+			
+				display: block;
+				
+			} 
+			
+		</style>
+		<script>
+		
+			/*********************************************************************************************************
+			
+				Reference jQuery,jQuery Mobile, jQuery UI Libraries- https://developers.google.com/speed/libraries/
+				
+				$(function() {
+				
+					console.log( "ready!" );
+				
+				});
+				
+			*********************************************************************************************************/
+		
+		</script>
+	</head>
+	<body>
+		<!------------------------------------------------------------------------------------------------------------
+		
+			Reference
+			
+				http://www.w3.org/wiki/HTML_structural_elements
+				
+				http://www.w3schools.com/html/html5_intro.asp
+		
+		------------------------------------------------------------------------------------------------------------>
+		<main>
+		<!-- ^  Specifies the main content of a document -->
+			<header>
+				<!-- ^  specifies a header for a document or section -->
+				<h1>Semantic Elements <mark>HTML5</mark><!-- highlight text --></h1>
+			</header>
+			<nav>
+				<!-- ^  defines a set of navigation links -->
+			</nav>
+			<article>
+				<!-- ^  specifies independent, self-contained content containing related individual standalone pieces of content -->
+				<section>
+					<!-- ^ grouping distinct sections of content or functionality -->
+					<details>
+						<!-- ^ Defines additional details that the user can view or hide -->
+						<summary>
+						<!-- ^ Defines a visible heading for a <details> element -->
+						</summary>
+					</details>
+				</section>
+				<section>
+					<!-- ^ grouping distinct sections of content or functionality -->
+					<p>We open at <time>10:00</time> every morning.</p>
+					<p>I have a date on <time datetime="2008-02-14 20:00">Valentines day</time>.</p>
+					<figure>
+						<!-- ^  images and captions  -->
+						<img src="" />
+						<figcaption>
+							<!-- ^  defines the caption -->
+						</figcaption>
+					</figure>
+				</section>
+			</article>
+			<aside>
+				<!-- ^  defines some content aside from the main content -->
+			</aside>
+			<footer>
+				<!-- ^  element specifies a footer for a document or section -->
+			</footer>
+		</main>
+	</body>
+</html>
+
+	
