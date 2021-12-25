@@ -1,7 +1,5 @@
-# devops scraps
+# scripts and scraps
 
-This is a dump-esque repo for all my dev ops related modules, scripts, workflows, etc.
+This is a dumping ground-esque repo for some modules, scripts, workflows, etc. than I use or want to keep handy
 
 Nothing within the repo is supported
-
-[Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/index.html)
