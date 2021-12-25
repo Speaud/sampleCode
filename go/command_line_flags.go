@@ -21,6 +21,14 @@ func main() {
 	numbPtr := flag.Int("numb", 42, "an int")
 	forkPtr := flag.Bool("fork", false, "a bool")
 
+	/*
+		subcommands example
+
+		fooCmd := flag.NewFlagSet("foo", flag.ExitOnError)
+		fooEnable := fooCmd.Bool("enable", false, "enable")
+		fooName := fooCmd.String("name", "", "name")
+	*/
+
 	var svar string
 	flag.StringVar(&svar, "svar", "bar", "a string var")
 
