@@ -1,0 +1,12 @@
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+gitacp() {
+ git add . && git commit -m "$1" && git push
+}
+
+gitnb() {
+ git checkout -b $1
+ git push -u origin $1
+}
