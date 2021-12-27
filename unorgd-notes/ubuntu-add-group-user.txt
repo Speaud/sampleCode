@@ -1,4 +1,0 @@
-sudo groupadd <group name>
-sudo gpasswd -a $USER <group name>
-newgrp <group name> (or login/out)
-groups <group name>
