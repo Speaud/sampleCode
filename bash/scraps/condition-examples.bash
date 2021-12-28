@@ -4,7 +4,6 @@
 
 # if directory exists
 if [ ! -d "$BUILD_DIRECTORY" ]; then
-  # Control will enter here if $DIRECTORY doesn't exist.
   echo 'app dir not found'
   exit 1
 fi
@@ -16,6 +15,7 @@ fi
 
 # shorthand for (a)
 [ $USE_DEFAULT_VERSIONING_LOGIC != "y" ] && ( echo you are using a non-privileged account; exit 1 )
+
 # nested if else
 [ $(date +%w) -eq 6 ] && {echo "do something on Saturdays"; do_some_other_stuff; exit 0;} || echo "do different things on other days"
 
