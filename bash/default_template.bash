@@ -5,7 +5,13 @@
 	@author
 	@description
 	@documentation
-
+    
+  syntax
+      GLOBAL_SCOPE_VAR
+      local_scope_var
+      ExecutionCommandFunction
+      helperFunction
+      
 README
 #!/bin/bash
 
