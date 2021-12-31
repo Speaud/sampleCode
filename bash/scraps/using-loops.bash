@@ -22,3 +22,6 @@ done
 
 echo ${#DAYS_REQUESTED[@]}
 echo ${DAYS_REQUESTED[@]}
+
+# change all file extensions from sh to bash
+for f in *.sh; do mv -- "$f" "${f%.sh}.bash"; done
