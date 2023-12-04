@@ -7,9 +7,6 @@ light="\033[0m"
 sii="\e[32m>$light"
 errwarn="\e[1;31;40m"
 
-## ints
-# ex. prop=boolean
-
 ## arrays
 ## associative arrays (bash requires array declariations)
 # ex. declare -A assocarrname
