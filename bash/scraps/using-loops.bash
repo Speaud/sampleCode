@@ -9,7 +9,7 @@ done
 
 ###
 
-DATE="1988/10/17"
+DATE="2000/10/10"
 
 declare -a DAYS_REQUESTED
 
